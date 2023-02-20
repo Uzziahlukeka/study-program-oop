@@ -14,7 +14,7 @@ public class Normal extends MovieRoom
  
     @Override
     public void drinks(String boiss){
-        System.out.println("Find coca cola ,water and juice" + boiss);
+        System.out.println("Find coca cola ,water and juice " + boiss);
     }
     @Override
     public void foods(){
