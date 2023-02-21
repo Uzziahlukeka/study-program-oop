@@ -41,7 +41,7 @@ public class ProPara {
                 do {
                     Mov = uzh.nextInt();
                     switch (Mov) {
-                        case 1 -> System.out.println(" you choose Naruto");
+                        case 1 -> System.out.println("you choose Naruto");
                         case 3 -> System.out.println("you choose Kuroko's basket");
                         case 4 -> System.out.println("you choose My hero academia");
                         case 2 -> System.out.println("you choose One piece red");
@@ -141,38 +141,46 @@ public class ProPara {
                         }
                     }
                     System.out.println("Do you want to continue Y / N ?(please use capital letter)");
-                    Scanner oui = new Scanner(System.in);
-                    String pop;
-                    pop = oui.nextLine();
-                    if (pop.equals("Y")) {
-                        Human per = new Human();
-                        Scanner nom = new Scanner(System.in);
-                        Scanner surnom = new Scanner(System.in);
-                        System.out.println("Write your name");
-                        String djina = nom.nextLine();
-                        per.setname(djina);
-                        System.out.println("Write your surname");
-                        String nani = surnom.nextLine();
-                        per.setsurname(nani);
-                        System.out.println("WELCOME " + per.yourfullname());
-                        System.out.println("""
-                                                   please remember type room: 1. VIP=150pln  2. Normal=100pln 3.Discount=50 pln
-                                                   Welcome,""" + per.yourfullname() + " you choose " + choix + " as your room Thank you for you choix");
-                        System.out.println("Your ticket is for : ");
-                        System.out.println(movi.get(Mov - 1).getmovie() + " type room : " + choix + " person's name " + per.yourname());
-                        System.out.println("WELCOME AND HAVE FUN !!!");
+                    //Scanner oui = new Scanner(System.in);
+                    Scanner ji=new Scanner(System.in);
+                    char lol;
+                    boolean ath=true;
 
-                        yth=false;
-                    } else {
-                        System.out.println("THANK YOU !!");
-                        yth=false;
+                    while(ath) {
+                        lol=ji.next().charAt(0);
+                        if (lol == 'Y') {
+                            Human per = new Human();
+                            Scanner nom = new Scanner(System.in);
+                            Scanner surnom = new Scanner(System.in);
+                            System.out.println("Write your name");
+                            String djina = nom.nextLine();
+                            per.setname(djina);
+                            System.out.println("Write your surname");
+                            String nani = surnom.nextLine();
+                            per.setsurname(nani);
+                            System.out.println("WELCOME " + per.yourfullname());
+                            System.out.println("""
+                                                       please remember type room: 1. VIP=150pln  2. Normal=100pln 3.Discount=50 pln
+                                                       Welcome,""" + per.yourfullname() + " you choose " + choix + " as your room Thank you for you choix");
+                            System.out.println("Your ticket is for : ");
+                            System.out.println(movi.get(Mov - 1).getmovie() + " type room : " + choix + " person's name " + per.yourname());
+                            System.out.println("WELCOME AND HAVE FUN !!!");
+                            ath=false;
+
+                        } else if (lol == 'N') {
+                            System.out.println("THANK YOU we hope to see you again !!");
+                            ath=false;
+                        } else {
+                            System.out.println("Please type Y or N");
+                        }
+                        yth = false;
                     }
                 } else {
                     System.out.println("THANK YOU! we hope to see you again ");
                     yth=false;
                 }
             } catch (InputMismatchException e) {
-                System.out.print(" type a number");
+                System.out.print(" type a number between 1-4 according to the presentation : ");
                 uzh.next();
             }
         }
