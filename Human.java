@@ -40,6 +40,6 @@ public class Human {
     
     public String yourfullname(){
     
-        return this.name + this.surname;
+        return this.name+" " + this.surname;
     }
 }
