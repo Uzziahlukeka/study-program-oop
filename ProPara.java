@@ -33,7 +33,7 @@ public class ProPara {
         System.out.println("SELECT YOUR MOVIE : ");
         
         Scanner uzh= new Scanner(System.in);
-        int Mov ;
+        int Mov = 0;
         boolean yth=true;
 
         while(yth) {
@@ -50,10 +50,18 @@ public class ProPara {
                     if (Mov < 1 || Mov > 4) {
                         System.out.println(" please type correctly the number ");
                     }
+                    yth=false;
                 } while (Mov < 1 || Mov > 4);
+            }catch (InputMismatchException e) {
+                System.out.print(" type a number according to the presentation : ");
+                uzh.next();
+            }
+        }
                 int number;
                 Scanner lkk = new Scanner(System.in);
                 System.out.println("Do you want to continue ? (press 1 for yes and 0 for no) : ");
+
+                
                 number = lkk.nextInt();
                 if (number == 1) {
                     System.out.println("""
@@ -135,20 +143,20 @@ public class ProPara {
                                 }
                             }
                             stop = false;
-                        } catch (InputMismatchException e) {
+                        } catch (InputMismatchException i) {
                             System.out.println("Please type number 1-3");
                             choice.next();
                         }
                     }
-                    System.out.println("Do you want to continue Y / N ?(please use capital letter)");
+                    System.out.println("Do you want to continue Y / N ?");
                     //Scanner oui = new Scanner(System.in);
-                    Scanner ji=new Scanner(System.in);
+                    Scanner ji = new Scanner(System.in);
                     char lol;
-                    boolean ath=true;
+                    boolean ath = true;
 
-                    while(ath) {
-                        lol=ji.next().charAt(0);
-                        if (lol == 'Y') {
+                    while (ath) {
+                        lol = ji.next().charAt(0);
+                        if (lol == 'Y' || lol == 'y') {
                             Human per = new Human();
                             Scanner nom = new Scanner(System.in);
                             Scanner surnom = new Scanner(System.in);
@@ -165,28 +173,26 @@ public class ProPara {
                             System.out.println("Your ticket is for : ");
                             System.out.println(movi.get(Mov - 1).getmovie() + " type room : " + choix + " person's name " + per.yourname());
                             System.out.println("WELCOME AND HAVE FUN !!!");
-                            ath=false;
+                            ath = false;
 
-                        } else if (lol == 'N') {
+                        } else if (lol == 'N' || lol == 'n') {
                             System.out.println("THANK YOU we hope to see you again !!");
-                            ath=false;
+                            ath = false;
                         } else {
                             System.out.println("Please type Y or N");
                         }
-                        yth = false;
+                       // yth = false;
                     }
                 } else {
                     System.out.println("THANK YOU! we hope to see you again ");
-                    yth=false;
+                    //yth = false;
                 }
-            } catch (InputMismatchException e) {
-                System.out.print(" type a number between 1-4 according to the presentation : ");
-                uzh.next();
+
+
             }
-        }
 
     }
-    }
+
  
         
     
