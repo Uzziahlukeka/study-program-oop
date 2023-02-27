@@ -183,12 +183,17 @@ public class ProPara {
                         }
                        // yth = false;
                     }
-                } else {
+                }
+
+                else if (number==0){
+
+                    System.out.println("We hope to see you again soon");
+
+                }
+                else {
                     System.out.println("THANK YOU! we hope to see you again ");
                     //yth = false;
                 }
-
-
             }
 
     }
