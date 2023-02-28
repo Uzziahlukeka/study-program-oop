@@ -187,7 +187,7 @@ public class ProPara {
                 }
                 bowa=false;
             } else if (number == 0) {
-                System.out.println("We hope to see you again soon");
+                System.out.println("THANK YOU !! We hope to see you again soon");
                 bowa=false;
             } else {
                 System.out.println("you type a character different of what presented to you Please choose 1 to CONTINUE and 0 to END ");
