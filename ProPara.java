@@ -67,8 +67,8 @@ public class ProPara {
             number = lkk.nextInt();
             if (number == 1) {
                 System.out.println("""
-                        we have 3 kind of rooms we have VIP : we give you food , drink , table and you can choose you seat and it costs 150 pln 
-                        we have Normal :we offert you drink , a table and you can choose your seat and it costs 100 pln 
+                        we have 3 kind of rooms we have VIP : we give you food , drink , table and you can choose you seat and it costs 150 pln
+                        we have Normal :we offert you drink , a table and you can choose your seat and it costs 100 pln
                         our last option is Discount room : we don't offert you anything it costs 50""");
 
                 System.out.println(" Choose 1 for VIP "
@@ -80,13 +80,14 @@ public class ProPara {
                 Scanner choice = new Scanner(System.in);
                 int choix;
                 choix = 0;
-                String color = "Blue";
+                //String color = "Blue";
                 int chaise;
                 boolean stop = true;
                 while (stop) {
                     try {
                         choix = choice.nextInt();
                         Scanner choisir = new Scanner(System.in);
+                        boolean moi=true;
                         switch (choix) {
                             case 1 -> {
                                 System.out.println("WELCOME TO OUR VIP ROOM!!");
@@ -95,7 +96,7 @@ public class ProPara {
                                 System.out.println("""
                                         Do you know where is your table ?
                                          press 1 for YES and 0 for NO""");
-                                do {
+                                while(moi){
                                     chaise = choisir.nextInt();
                                     switch (chaise) {
                                         case 0:
@@ -103,11 +104,12 @@ public class ProPara {
                                         case 1:
                                             System.out.println("Thank you for your confirmation!");
                                             //default : System.out.println("Please choose 1 or 0 ");
-                                            if (chaise < 0 || chaise > 1) {
-                                                System.out.println("Please choose 1 or 0 ");
-                                            }
+                                        moi=false;
                                     }
-                                } while (chaise < 0 || chaise > 1);
+                                    if (chaise < 0 || chaise > 1) {
+                                        System.out.println("Please choose 1 or 0 ");
+                                    }
+                                }
                             }
                             case 2 -> {
                                 System.out.println("""
@@ -122,20 +124,19 @@ public class ProPara {
                                 System.out.println("""
                                         Do you know where is your table ?
                                          press 1 for YES and 0 for NO""");
-                                do {
+                                while(moi) {
                                     chaise = choisir.nextInt();
                                     switch (chaise) {
                                         case 1:
                                             System.out.println("Thank you for your confirmation!");
                                         case 0:
                                             normal.whereismytable();
-
-                                            //default : System.out.println("Please choose 1 or 0 ");
-                                            if (chaise < 0 || chaise > 1) {
-                                                System.out.println("Please choose 1 or 0 ");
-                                            }
+                                        moi=false;
                                     }
-                                } while (chaise < 0 || chaise > 1);
+                                    if (chaise < 0 || chaise > 1) {
+                                        System.out.println("Please choose 1 or 0 ");
+                                    }
+                                }
                             }
                             case 3 -> {
                                 System.out.println("WELCOME TO OUR DISCOUNT ROOM");
