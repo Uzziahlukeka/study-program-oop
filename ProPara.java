@@ -48,7 +48,7 @@ public class ProPara {
                         //default -> System.out.println("\033[31mSorry you type wrongly , please choose one of the movies up there and type the same name\033[0m");
                     }
                     if (Mov < 1 || Mov > 4) {
-                        System.out.println(" please type correctly the number ");
+                        System.out.println(" please type correctly the number (from 1 to 4) ");
                     }
                     yth=false;
                 } while (Mov < 1 || Mov > 4);
@@ -61,7 +61,6 @@ public class ProPara {
                 Scanner lkk = new Scanner(System.in);
                 System.out.println("Do you want to continue ? (press 1 for yes and 0 for no) : ");
 
-                
                 number = lkk.nextInt();
                 if (number == 1) {
                     System.out.println("""
@@ -184,18 +183,14 @@ public class ProPara {
                        // yth = false;
                     }
                 }
-
                 else if (number==0){
-
                     System.out.println("We hope to see you again soon");
-
                 }
                 else {
-                    System.out.println("THANK YOU! we hope to see you again ");
+                    System.out.println("you type a character different of what presented to you , THANK YOU WE HOPE TO SEE YOU AGAIN");
                     //yth = false;
                 }
             }
-
     }
 
  
